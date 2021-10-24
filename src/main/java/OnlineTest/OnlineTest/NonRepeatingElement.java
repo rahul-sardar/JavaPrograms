@@ -40,6 +40,9 @@ public class NonRepeatingElement {
 		//call the NonRepeating function
 		int a[] = {1,1,2,3,3,7,9,9}; 
 		NonRepeating(a,a.length);
+		System.out.println();
+		int b[] = {1,1,2,3,3,7,2,9,9,8,6,8}; 
+		NonRepeating(b,b.length);
 	}
 
 }

@@ -31,16 +31,17 @@ public class RemoveDuplicatesFromArray {
 		int[] result = new int[numbersWithDuplicates.length];
 		int previous = numbersWithDuplicates[0];
 		result[0] = previous;
-
+        int j=1;
 		for (int i = 1; i < numbersWithDuplicates.length; i++) {
 			int ch = numbersWithDuplicates[i];
 
 			if (previous != ch) {
-				result[i] = ch;
+				result[j] = ch;
+				j++;
 			}
 			previous = ch;
 		}
-		return result;
+		return Arrays.copyOfRange(result, 0, j);
 
 	}
 
