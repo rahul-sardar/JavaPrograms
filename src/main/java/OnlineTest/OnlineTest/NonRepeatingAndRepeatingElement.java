@@ -1,8 +1,9 @@
 package OnlineTest.OnlineTest;
 
+import java.util.HashSet;
+import java.util.Set;
 
-
-public class NonRepeatingElement {
+public class NonRepeatingAndRepeatingElement {
 
 	public static void NonRepeating(int a[],int n)
 	{
@@ -25,6 +26,30 @@ public class NonRepeatingElement {
 				System.out.print(a[i]+" ");
 		}
 	}
+	
+	public static void Repeating(int a[],int n)
+	{
+		int count;
+	    Set<Integer> repeatingElement = new HashSet<Integer>();
+		System.out.println("Repeating element in array: ");
+
+		for(int i=0;i<n;i++)
+		{
+			count=0;
+			//initialise the for loop for checking the elenemnt which are not repeated)
+			for (int j = 0; j < n; j++)
+			{
+				//check the condition if any number is same so
+				//Increment the count if same number found
+				if(a[i]==a[j] && i!=j)
+					count++;
+			}
+			//if count became more than '1' so add  the current element in hashset
+			if(count>0)
+			    repeatingElement.add(a[i]);
+		}
+		System.out.println(repeatingElement);
+	}
 
 	public static void main(String[] args) 
 	{
@@ -43,6 +68,8 @@ public class NonRepeatingElement {
 		System.out.println();
 		int b[] = {1,1,2,3,3,7,2,9,9,8,6,8}; 
 		NonRepeating(b,b.length);
+		System.out.println();
+		Repeating(b,b.length);
 	}
 
 }
